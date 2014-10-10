@@ -12,87 +12,113 @@
 
   <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
   <script data-main="scripts/editor" src="scripts/require.js"></script>
-
- <style type="text/css">
- body {
-  font-family: Droid Sans, Arial, sans-serif;
-  line-height: 1.5;
-  /*max-width: 64.3em;*/
-}
-  .CodeMirror {
-    font-size: 14px;
-    height: 100%;
-  }
-
-  #options {
-    position: absolute;
-    font-size: 14px;
+  <!-- My Custom styleshseet -->
+  <link rel="stylesheet" href="custom.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+  <style type="text/css">
+    body {
     font-family: Droid Sans, Arial, sans-serif;
     line-height: 1.5;
-    top: 20px;
-    right: 40px;
-    z-index: 1;
-  }
+    /*max-width: 64.3em;*/
+    
+    }
+    .CodeMirror {
+      font-size: 14px;
+      height: 100%;
+    }
 
-  #header {
-    position: absolute;
-    top: 0;
-    right: 50%;
-    bottom: 0;
-    left: 0;
+    #options {
+      position: absolute;
+      font-size: 14px;
+      font-family: Droid Sans, Arial, sans-serif;
+      line-height: 1.5;
+      top: 20px;
+      right: 40px;
+      z-index: 1;
+    }
 
-    font-size: 250%;
-    text-transform: uppercase;
-    color: rgb(68, 68, 68);
-    font-family: 'Lato',Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 100;
-    padding-left: 20px;
-  }
+    #header {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      bottom: 0;
+      left: 0;
 
-  #controls {
-    position: absolute;;
-    top: 20;
-    right: 0;
-    bottom: 10;
-    left: 50%;
+      font-size: 250%;
+      text-transform: uppercase;
+      color: rgb(68, 68, 68);
+      font-family: 'Lato',Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-weight: 100;
+      padding-left: 20px;
+    }
 
-  }
+    #controls {
+      position: absolute;;
+      top: 20;
+      right: 0;
+      bottom: 10;
+      left: 50%;
 
-  #errors {
-    color: white;
-    position: absolute;
-    background-color: #4C4C4C;
-    right: 500;
-    z-index: 10;
-    bottom: 10;
-    /*left: 50%;*/
-    /*padding-top: 20px;*/
-    /*padding-left: 55px;*/
-    padding: 10px;
-  	border-radius: 3px;
-  }
+    }
 
-  #edit-box {
-    position: absolute;
-    top: 60px;
-    right: 50%;
-    bottom: 0;
-    left: 0;
-  }
-  #output-box {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    left: 50%;
-  }
+    #errors {
+      color: white;
+      position: absolute;
+        left: 10px;
+        top: 510px;
+      background-color: #4C4C4C;
+      right: 500;
+      z-index: 10;
+      bottom: 10;
+      /*left: 50%;*/
+      /*padding-top: 20px;*/
+      /*padding-left: 55px;*/
+      padding: 10px;
+    	border-radius: 3px;
+      width: 500px;
+      height: 35px;
+      text-align: center;
+      /*margin-left: 0px;*/
+    }
 
-  .cm-s-dark {
-  	height: 550px;
-  	border-radius: 3px;
-  }
+    #edit-box {
+      position: absolute;
+      top: 60px;
+      right: 50%;
+      bottom: 0;
+      left: 0;
+    }
+    #output-box {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+    }
 
-</style>
+    .cm-s-dark {
+    	height: 450px;
+    	border-radius: 3px;
+    }
+
+
+  </style>
+  <script type="text/javascript">
+       window.onload=function() {
+       x=document.getElementById("url");
+        //x.style.display="block";
+        y=document.URL;
+        x.innerHTML = y; 
+      }
+
+    function showUrl() {
+        x=document.getElementById("url");
+      
+      x.focus();
+      x.select();      
+    }
+
+  </script>
 </head>
 <body>
 
@@ -180,7 +206,11 @@ swap (foo, bar)
 <div id='output-box'>
 <textarea id="output"></textarea>
 </div>
-
+<br/>
+<button class="getUrl" onclick="showUrl()">
+	Get the URL of this code: 
+</button>
+<textarea id="url" onclick="showUrl()"></textarea> 
 
 </body>
 </html>
